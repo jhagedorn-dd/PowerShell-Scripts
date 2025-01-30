@@ -147,3 +147,30 @@ This document covers:
      Please renew the certificate immediately.
      ```
 6. Save & Test.
+
+---
+
+## 3. Manually Renewing the STS Certificate in vCenter
+
+### Prerequisites
+- Admin access to vCenter Server.
+- Access to the vSphere Client.
+
+### Steps to Renew the STS Certificate
+1. Log in to the vSphere Client as `administrator@vsphere.local` or another user with vCenter Single Sign-On administrator privileges.
+2. Navigate to the **Configuration UI**.
+3. From the **Home** menu, select **Administration**.
+4. Under **Single Sign On**, click **Configuration**.
+5. Select the **Certificates** tab, then the **STS Signing** subtab.
+6. Click the **Add STS Signing Certificate** icon.
+7. Browse to the key store JKS file that contains the new certificate and click **Open**.
+8. Type the password when prompted.
+9. Click the top of the STS alias chain and click **OK**.
+10. Type the password again when prompted and click **OK**.
+
+### Steps to Restart the Platform Services Controller Node
+1. Log in to the vSphere Web Client with a vCenter Single Sign-On administrator account.
+2. Navigate to **Administration > Deployment > System Configuration**.
+3. Click **Nodes**, select the node in question, and click the **Related Objects** tab.
+4. Right-click on the **Platform Services Controller** service and select **Restart**[1](https://knowledge.broadcom.com/external/article/340943/stop-start-or-restart-services-on-vcente.html)[2](https://knowledge.broadcom.com/external/article/344633/stopping-starting-or-restarting-vmware-v.html).
+5. Confirm the restart action and wait for the service to restart.
